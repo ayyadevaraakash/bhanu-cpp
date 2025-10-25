@@ -1,0 +1,48 @@
+// SUPER KEYWORD
+
+class Parent {
+    String name;
+    String color;
+
+    Parent(String name, String color) {
+        this.name = name;
+        this.color = color;
+    }
+
+    void run(){
+        System.out.println("I am running");
+    }
+
+    void swim(){
+        System.out.println("I am swimming");
+    }
+}
+
+class Child extends Parent {
+    int roll;
+
+    Child(String name, String color) {
+        super(name, color);
+        System.out.println("data is " + super.name + " and " + super.color);
+        System.out.println("I am child constructor");
+    }
+
+    void play(){
+        System.out.println("I am playing");
+    }
+
+    @Override
+    void swim(){
+        System.out.println("swimming in child class");
+    }
+
+    void callParentSwim(){
+        super.swim();
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Child obj = new Child("akash","red");
+    }
+}

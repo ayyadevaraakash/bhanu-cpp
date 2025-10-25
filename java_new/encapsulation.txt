@@ -1,0 +1,27 @@
+// ENCAPSULATION
+
+class Calculator {
+    private String companyName;
+
+    public String getCompanyName(String password){
+        if (password.equals("root")){
+            return this.companyName;
+        } else {
+            return "";
+        }
+    }
+
+    public void setCompanyName(String companyName, String password) {
+        if (password.equals("root")){
+            this.companyName = companyName;
+        }
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Calculator obj = new Calculator();
+        obj.setCompanyName("Casio", "root");
+        System.out.println("Company Name is " + obj.getCompanyName("root"));
+    }
+}
